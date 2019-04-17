@@ -1,0 +1,49 @@
+---- m_conn_handle Matches (48 in 8 files) ----
+Ble_conn_params.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\ble\common):static uint16_t               m_conn_handle;            /**< Current connection handle. */
+Ble_conn_params.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\ble\common):    if (m_conn_handle != BLE_CONN_HANDLE_INVALID)
+Ble_conn_params.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\ble\common):            err_code = sd_ble_gap_conn_param_update(m_conn_handle, &m_preferred_conn_params);
+Ble_conn_params.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\ble\common):                err_code = sd_ble_gap_disconnect(m_conn_handle, BLE_HCI_CONN_INTERVAL_UNACCEPTABLE);
+Ble_conn_params.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\ble\common):    m_conn_handle  = BLE_CONN_HANDLE_INVALID;
+Ble_conn_params.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\ble\common):    m_conn_handle         = p_ble_evt->evt.gap_evt.conn_handle;
+Ble_conn_params.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\ble\common):    m_conn_handle = BLE_CONN_HANDLE_INVALID;
+Ble_conn_params.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\ble\common):            err_code = sd_ble_gap_conn_param_update(m_conn_handle, &m_preferred_conn_params);
+Es_flash.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\eddystone):static uint16_t          m_conn_handle = BLE_CONN_HANDLE_INVALID;   //!< Current connection handle.
+Es_flash.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\eddystone):            if (m_factory_reset && m_conn_handle != BLE_CONN_HANDLE_INVALID)
+Es_flash.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\eddystone):                    sd_ble_gap_disconnect(m_conn_handle, BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);
+Es_flash.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\eddystone):            m_conn_handle = p_evt->evt.common_evt.conn_handle;
+Es_flash.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\eddystone):            m_conn_handle = BLE_CONN_HANDLE_INVALID;
+Es_flash.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\eddystone):    m_conn_handle = BLE_CONN_HANDLE_INVALID;
+Identificator.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\examples\ble_central\ble_app_hrs_c\pca10040\s132\identificator):uint16_t                     m_conn_handle;                /**< Current connection handle. */
+Identificator.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\examples\ble_central\ble_app_hrs_c\pca10040\s132\identificator):		  err_code = sd_ble_gap_disconnect(m_conn_handle, BLE_HCI_CONN_INTERVAL_UNACCEPTABLE);
+Identificator.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\examples\ble_central\ble_app_hrs_c\pca10040\s132\identificator):		err_code = sd_ble_gap_disconnect(m_conn_handle, BLE_HCI_CONN_INTERVAL_UNACCEPTABLE);
+Identificator.h (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\examples\ble_central\ble_app_hrs_c\pca10040\s132\identificator):extern uint16_t  m_conn_handle; 
+Main.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\examples\ble_central\ble_app_hrs_c):            err_code = sd_ble_gap_disconnect(m_conn_handle, BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);
+Main.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\examples\ble_central\ble_app_hrs_c):        err_code = sd_ble_gap_disconnect(m_conn_handle, BLE_HCI_CONN_INTERVAL_UNACCEPTABLE);
+Nfc_ble_pair_lib.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\nfc\ndef\connection_handover\ble_pair_lib):static uint16_t m_conn_handle       = BLE_CONN_HANDLE_INVALID;       /**< Handle of the current connection */
+Nfc_ble_pair_lib.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\nfc\ndef\connection_handover\ble_pair_lib):                err_code = sd_ble_gap_disconnect(m_conn_handle, BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);
+Nfc_ble_pair_lib.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\nfc\ndef\connection_handover\ble_pair_lib):            m_conn_handle = p_ble_evt->evt.gap_evt.conn_handle;
+Nfc_ble_pair_lib.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\nfc\ndef\connection_handover\ble_pair_lib):            m_conn_handle = BLE_CONN_HANDLE_INVALID;
+Nrf_ble_dfu.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\bootloader\ble_dfu):static uint16_t                             m_conn_handle = BLE_CONN_HANDLE_INVALID;                /**< Handle of the current connection. */
+Nrf_ble_dfu.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\bootloader\ble_dfu):    uint32_t err_code = sd_ble_gatts_value_get(m_conn_handle,
+Nrf_ble_dfu.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\bootloader\ble_dfu):    if ((m_conn_handle == BLE_CONN_HANDLE_INVALID) || (m_flags & DFU_BLE_FLAG_SERVICE_INITIALIZED) == 0)
+Nrf_ble_dfu.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\bootloader\ble_dfu):    return send_hvx(m_conn_handle, p_dfu->dfu_ctrl_pt_handles.value_handle, index);
+Nrf_ble_dfu.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\bootloader\ble_dfu):    if ((m_conn_handle == BLE_CONN_HANDLE_INVALID) || (m_flags & DFU_BLE_FLAG_SERVICE_INITIALIZED) == 0)
+Nrf_ble_dfu.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\bootloader\ble_dfu):    return send_hvx(m_conn_handle, p_dfu->dfu_ctrl_pt_handles.value_handle, index);
+Nrf_ble_dfu.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\bootloader\ble_dfu):    if ((m_conn_handle == BLE_CONN_HANDLE_INVALID) || (m_flags & DFU_BLE_FLAG_SERVICE_INITIALIZED) == 0)
+Nrf_ble_dfu.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\bootloader\ble_dfu):    return send_hvx(m_conn_handle, p_dfu->dfu_ctrl_pt_handles.value_handle, index);
+Nrf_ble_dfu.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\bootloader\ble_dfu):            (void)sd_ble_gatts_rw_authorize_reply(m_conn_handle, &auth_reply);
+Nrf_ble_dfu.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\bootloader\ble_dfu):        err_code = sd_ble_gatts_rw_authorize_reply(m_conn_handle, &auth_reply);
+Nrf_ble_dfu.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\bootloader\ble_dfu):            m_conn_handle = p_ble_evt->evt.gap_evt.conn_handle;
+Nrf_ble_dfu.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\bootloader\ble_dfu):            m_conn_handle = BLE_CONN_HANDLE_INVALID;
+Nrf_ble_dfu.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\bootloader\ble_dfu):            err_code = sd_ble_gap_sec_params_reply(m_conn_handle,
+Nrf_ble_dfu.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\bootloader\ble_dfu):                err_code = sd_ble_gap_disconnect(m_conn_handle,
+Nrf_ble_dfu.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\bootloader\ble_dfu):            err_code = sd_ble_user_mem_reply(m_conn_handle, NULL);
+Nrf_ble_dfu.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\bootloader\ble_dfu):    m_conn_handle = BLE_CONN_HANDLE_INVALID;
+Nrf_ble_dfu.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\bootloader\ble_dfu):    if (m_conn_handle != BLE_CONN_HANDLE_INVALID)
+Nrf_ble_dfu.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\bootloader\ble_dfu):        err_code = sd_ble_gap_disconnect(m_conn_handle, BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);
+Nrf_ble_es.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\eddystone):static uint16_t                       m_conn_handle = BLE_CONN_HANDLE_INVALID;  //!< Connection handle.
+Nrf_ble_es.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\eddystone):    if (m_conn_handle != BLE_CONN_HANDLE_INVALID)
+Nrf_ble_es.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\eddystone):            m_conn_handle = p_ble_evt->evt.common_evt.conn_handle;
+Nrf_ble_es.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\eddystone):            m_conn_handle = BLE_CONN_HANDLE_INVALID;
+Nrf_ble_es.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\eddystone):            if (m_conn_handle != BLE_CONN_HANDLE_INVALID)
+Nrf_ble_es.c (c:\users\administrator\desktop\nrf5_sdk_13.1.0_7ca7556_18_03_13_dpu\components\libraries\eddystone):    m_conn_handle = BLE_CONN_HANDLE_INVALID;
