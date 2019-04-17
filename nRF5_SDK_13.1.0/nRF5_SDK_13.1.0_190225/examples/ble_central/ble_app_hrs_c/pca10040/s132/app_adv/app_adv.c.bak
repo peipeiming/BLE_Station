@@ -1,0 +1,104 @@
+#include <string.h>
+#include "app_adv.h"
+
+static ADV_T adv_fifo;
+static uint8_t adv_rxbuf[ADV_RX_BUF_SIZE];		/* 接收缓冲区 */
+
+/*
+*********************************************************************************************************
+ * 函数名：GAPFiFoInit
+ * 描述  ：保存GAP数据的FIFO初始化：设置写FIFO地址指针、读FIFO地址指针、FIFO大小等参数
+ * 输入  ：无
+ * 返回  : 无
+*********************************************************************************************************
+ */
+void app_adv_fifoinit(void)
+{
+	adv_fifo.pRxBuf=adv_rxbuf;
+	adv_fifo.usRxBufSize=ADV_RX_BUF_SIZE;
+	adv_fifo.usRxCount=0;
+	adv_fifo.usRxRead=0;
+	adv_fifo.usRxWrite=0;
+}
+
+/*
+*********************************************************************************************************
+ * 函数名：Write_FiFo
+ * 描述  ：GAP数据存FIFO
+ * 输入  ：p，待存储的数据
+ *       : len，待存储数据长度
+ * 返回  : 无
+*********************************************************************************************************
+ */
+void app_adv_WriteFifoData(uint8_t *p,uint8_t len)
+{
+	uint8_t i;
+	for(i=0;i<len;i++)
+	{
+		/*如果待读取的数据总数小于FIFO的大小,则写入*/
+		if (adv_fifo.usRxCount<adv_fifo.usRxBufSize)
+		{
+			adv_fifo.pRxBuf[adv_fifo.usRxWrite]=p[i];
+			if (++adv_fifo.usRxWrite >= adv_fifo.usRxBufSize)
+			{
+				adv_fifo.usRxWrite = 0;
+			}
+			adv_fifo.usRxCount++;
+		}
+		#if 0
+		else
+		{
+			printf("adv_fifo full!\r\n");
+		}
+		#endif
+	}
+}
+
+/*
+*********************************************************************************************************
+ * 函数名：gap_info_send
+ * 描述  ：识别器广播包数据上报
+ * 输入  ：*p,信息机发出包含获取目标识别器广播包的识别器ID
+ * 返回  : 无
+ * 协议格式：Head(1Byte)+Protocol ID(1Byte)+Data len(2Byte)+
+ * identificator ID(8Byte)+Calibration value(1Byte)+Tail(1Byte)
+**********************************************************************************************************
+ */
+void app_adv_datasend(uint8_t *p)
+{
+	uint16_t i;
+	
+	if(0 != memcmp(&p[4],station_addr,8))
+	{
+		return;
+	}
+	
+	#if 1
+	/*待读取的数据大于180字节，则每次发送180字节，保证总线不长时间被占用*/
+	if(adv_fifo.usRxCount>210)
+	{
+		for(i=0;i<210;i++)
+		{
+			app_uart_put(adv_fifo.pRxBuf[adv_fifo.usRxRead]);
+			if (++adv_fifo.usRxRead >= adv_fifo.usRxBufSize)
+			{
+				adv_fifo.usRxRead=0;
+			}
+		}
+		adv_fifo.usRxCount-=210;
+  }
+	else 
+  {
+		for(i=0;i<adv_fifo.usRxCount;i++)
+		{
+			app_uart_put(adv_fifo.pRxBuf[adv_fifo.usRxRead]);
+			if (++adv_fifo.usRxRead >= adv_fifo.usRxBufSize)
+			{
+				adv_fifo.usRxRead=0;
+			}
+		}
+		adv_fifo.usRxCount=0;
+	}
+	#endif
+}
+

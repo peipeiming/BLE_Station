@@ -1,0 +1,102 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.23.0.0
+Copyright (C) 2017 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: vcasw Microsoft, Microsoft, LIC=YA374-FI3QQ-R9MG6-D4RS6-RY7SF-UNVIN
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.23
+Toolchain Path:  D:\MDK5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 4 (build 422)
+Assembler:       Armasm.exe V5.06 update 4 (build 422)
+Linker/Locator:  ArmLink.exe V5.06 update 4 (build 422)
+Library Manager: ArmAr.exe V5.06 update 4 (build 422)
+Hex Converter:   FromElf.exe V5.06 update 4 (build 422)
+CPU DLL:         
+Dialog DLL:      
+Target DLL:      Segger\JL2CM3.dll V2.99.23.0
+Dialog DLL:      TCM.DLL V1.27.0.0
+ 
+<h2>Project:</h2>
+C:\Users\Administrator\Desktop\nRF5_SDK_13.1.0_7ca7556_17_11_09\examples\ble_central\ble_app_hrs_c\pca10040\s132\arm5_no_packs\ble_app_hrs_c_pca10040_s132.uvprojx
+Project File Date:  12/09/2017
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 4 (build 422)', folder: 'D:\MDK5\ARM\ARMCC\Bin'
+Build target 'flash_s132_nrf52_4.0.2_softdevice'
+compiling retarget.c...
+..\..\..\..\..\..\components\libraries\uart\retarget.c(40): error:  #5: cannot open source input file "sdk_common.h": No such file or directory
+  #include "sdk_common.h"
+..\..\..\..\..\..\components\libraries\uart\retarget.c: 0 warnings, 1 error
+compiling ble_rscs_c.c...
+..\..\..\..\..\..\components\ble\ble_services\ble_rscs_c\ble_rscs_c.c(13): error:  #5: cannot open source input file "strdeal.h": No such file or directory
+  #include "strdeal.h"
+..\..\..\..\..\..\components\ble\ble_services\ble_rscs_c\ble_rscs_c.c: 0 warnings, 1 error
+compiling app_uart_fifo.c...
+..\..\..\..\..\..\components\libraries\uart\app_uart_fifo.c(40): error:  #5: cannot open source input file "sdk_common.h": No such file or directory
+  #include "sdk_common.h"
+..\..\..\..\..\..\components\libraries\uart\app_uart_fifo.c: 0 warnings, 1 error
+compiling main.c...
+..\..\..\main.c(46): error:  #5: cannot open source input file "uart.h": No such file or directory
+  #include "uart.h"
+..\..\..\main.c: 0 warnings, 1 error
+compiling app_fifo.c...
+..\..\..\..\..\..\components\libraries\fifo\app_fifo.c(40): error:  #5: cannot open source input file "sdk_common.h": No such file or directory
+  #include "sdk_common.h"
+..\..\..\..\..\..\components\libraries\fifo\app_fifo.c: 0 warnings, 1 error
+compiling uart.c...
+..\uart\uart.c(3): error:  #5: cannot open source input file "strdeal.h": No such file or directory
+  #include "strdeal.h"
+..\uart\uart.c: 0 warnings, 1 error
+compiling strdeal.c...
+..\strdeal\strdeal.h(5): error:  #5: cannot open source input file "ble_rscs_c.h": No such file or directory
+  #include "ble_rscs_c.h"
+..\strdeal\strdeal.c: 0 warnings, 1 error
+compiling datadeal.c...
+..\datadeal\datadeal.c(2): error:  #5: cannot open source input file "nrf_log.h": No such file or directory
+  #include "nrf_log.h"
+..\datadeal\datadeal.c: 0 warnings, 1 error
+compiling identificator.c...
+..\identificator\identificator.c(3): error:  #5: cannot open source input file "ble_dfu.h": No such file or directory
+  #include "ble_dfu.h"
+..\identificator\identificator.c: 0 warnings, 1 error
+compiling mble_dfu.c...
+..\ble_dfu\mble_dfu.c(1): error:  #5: cannot open source input file "ble_dfu.h": No such file or directory
+  #include "ble_dfu.h"
+..\ble_dfu\mble_dfu.c: 0 warnings, 1 error
+"..\..\..\..\..\..\components\softdevice\s132\hex\s132_nrf52_4.0.2_softdevice.hex" - 10 Error(s), 0 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.0.1.pack
+                ARM::CMSIS:CORE:5.0.1
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.0.1
+
+Package Vendor: NordicSemiconductor
+                http://developer.nordicsemi.com/nRF5_SDK/pieces/nRF_DeviceFamilyPack/NordicSemiconductor.nRF_DeviceFamilyPack.8.14.1.pack
+                NordicSemiconductor::Device:Startup:8.14.1
+                Nordic Semiconductor nRF ARM devices Device Family Pack.
+   * Component: Startup Version: 8.14.1
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_flash_s132_nrf52_4.0.2_softdevice
+  D:\MDK5\NordicSemiconductor\nRF_DeviceFamilyPack\8.14.1\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.0.1
+
+   * Component: NordicSemiconductor::Device:Startup:8.14.1
+      Source file:   Device\Source\arm\arm_startup_nrf52.s
+      Source file:   Device\Source\system_nrf52.c
+      Include file:  Device\Include\system_nrf52.h
+Target not created.
+Build Time Elapsed:  00:00:03
+</pre>
+</body>
+</html>
